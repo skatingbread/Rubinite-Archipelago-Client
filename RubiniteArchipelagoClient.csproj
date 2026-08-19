@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>TempFolder</AssemblyName>
+    <AssemblyName>RubiniteArchipelagoClient</AssemblyName>
     <Product>My first plugin</Product>
     <Version>1.0.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -12,7 +12,7 @@
       https://nuget.bepinex.dev/v3/index.json;
       https://nuget.samboy.dev/v3/index.json
     </RestoreAdditionalProjectSources>
-    <RootNamespace>TempFolder</RootNamespace>
+    <RootNamespace>RubiniteArchipelagoClient</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
