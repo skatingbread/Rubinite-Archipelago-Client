@@ -15,7 +15,7 @@
 	- [ ] Skills
 - [ ] Functionality
 	- [ ] Don't lock player in the final fight
-	- [ ] Game progress state based on recieved items
+	- [ ] Game progress state on level selector based on recieved items
 
 ## Ready for PR into Core
 
