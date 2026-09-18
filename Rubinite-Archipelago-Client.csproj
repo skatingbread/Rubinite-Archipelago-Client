@@ -19,9 +19,7 @@
 	<Target Name="WhitelistCopyLocalPaths" AfterTargets="ResolveLockFileCopyLocalProjectDeps">
 		<ItemGroup>
 			<!-- IMPORTANT: This whitelists is hard-coded... probably fine -->
-			<ReferenceCopyLocalPaths Remove="@(ReferenceCopyLocalPaths)"
-									 Condition="'%(Filename)' != 'Rubinite_Archipelago_Client.dll' 
-                                     And '%(Filename)' != 'Archipelago.MultiClient.Net.dll'" />
+			<ReferenceCopyLocalPaths Remove="@(ReferenceCopyLocalPaths)" Condition="'%(Filename)' != 'Rubinite_Archipelago_Client.dll' &#xD;&#xA;                                     And '%(Filename)' != 'Archipelago.MultiClient.Net.dll'" />
 		</ItemGroup>
 	</Target>
 
@@ -31,10 +29,7 @@
 			<OutputFiles Include="$(TargetDir)**\*Archipelago*.dll" />
 		</ItemGroup>
 		<!-- IMPORTANT: hard-codes Steam Folder :( whatever... -->
-		<Copy
-		  SourceFiles="@(OutputFiles)"
-		  DestinationFolder="C:\Program Files (x86)\Steam\steamapps\common\Rubinite\BepInEx\plugins\Rubinite_Archipelago_Client\%(RecursiveDir)"
-		  SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(OutputFiles)" DestinationFolder="C:\Program Files (x86)\Steam\steamapps\common\Rubinite\BepInEx\plugins\Rubinite_Archipelago_Client\%(RecursiveDir)" SkipUnchangedFiles="true" />
 	</Target>
 
 	<ItemGroup>
@@ -51,5 +46,50 @@
 
 	<ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
 		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="Assembly-CSharp">
+	    <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Rubinite\Rubinite_Data\Managed\Assembly-CSharp.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Coffee.UIParticle">
+	    <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Rubinite\Rubinite_Data\Managed\Coffee.UIParticle.dll</HintPath>
+	  </Reference>
+	  <Reference Include="com.rlabrecque.steamworks.net">
+	    <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Rubinite\Rubinite_Data\Managed\com.rlabrecque.steamworks.net.dll</HintPath>
+	  </Reference>
+	  <Reference Include="DiscordWebhook">
+	    <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Rubinite\Rubinite_Data\Managed\DiscordWebhook.dll</HintPath>
+	  </Reference>
+	  <Reference Include="FMODUnity">
+	    <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Rubinite\Rubinite_Data\Managed\FMODUnity.dll</HintPath>
+	  </Reference>
+	  <Reference Include="PugTool">
+	    <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Rubinite\Rubinite_Data\Managed\PugTool.dll</HintPath>
+	  </Reference>
+	  <Reference Include="RubyTextMeshPro">
+	    <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Rubinite\Rubinite_Data\Managed\RubyTextMeshPro.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Sirenix.Serialization">
+	    <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Rubinite\Rubinite_Data\Managed\Sirenix.Serialization.dll</HintPath>
+	  </Reference>
+	  <Reference Include="UnityEngine.AudioModule">
+	    <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Rubinite\Rubinite_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+	  </Reference>
+	  <Reference Include="UnityEngine.CoreModule">
+	    <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Rubinite\Rubinite_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+	  </Reference>
+	  <Reference Include="UnityEngine.InputForUIModule">
+	    <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Rubinite\Rubinite_Data\Managed\UnityEngine.InputForUIModule.dll</HintPath>
+	  </Reference>
+	  <Reference Include="UnityEngine.InputLegacyModule">
+	    <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Rubinite\Rubinite_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+	  </Reference>
+	  <Reference Include="UnityEngine.InputModule">
+	    <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Rubinite\Rubinite_Data\Managed\UnityEngine.InputModule.dll</HintPath>
+	  </Reference>
+	  <Reference Include="UnityEngine.UI">
+	    <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Rubinite\Rubinite_Data\Managed\UnityEngine.UI.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 </Project>
